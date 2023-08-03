@@ -4,9 +4,16 @@
 #include <dt-bindings/zmk/rgb.h>
 #include <dt-bindings/zmk/backlight.h>
 
-/ {
+/ { 
+    &sk {
+        release-after-ms = <1000>;
+        quick-release;
+        /delete-property/ ignore-modifiers;
+    };
+
     behaviors {
       #include "macros.dtsi"
+      #define AS(keycode) &as LS(keycode) keycode
 
       hm: homerow_mods {
           compatible = "zmk,behavior-hold-tap";
@@ -17,6 +24,15 @@
           flavor = "tap-preferred";
           bindings = <&kp>, <&kp>;
       };
+      as: auto_shift {
+            compatible = "zmk,behavior-hold-tap";
+            label = "AUTO_SHIFT";
+            #binding-cells = <2>;
+            tapping_term_ms = <400>;
+            quick_tap_ms = <0>;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&kp>;
+      };
     };
 
   keymap {
@@ -24,38 +40,38 @@
 
     default_layer {
       bindings = <
-        &kp EQUAL &kp N1    &kp N2   &kp N3   &kp N4     &kp N5 &tog 1                                                           &mo 3 &kp N6 &kp N7 &kp N8    &kp N9   &kp N0   &kp MINUS
-        &kp TAB   &kp Q     &kp W    &kp E    &kp R      &kp T  &none                                                            &none &kp Y  &kp U  &kp I     &kp O    &kp P    &kp BSLH
-        &kp ESC   &kp A     &kp S    &kp D    &kp F      &kp G  &none           &kp LCTRL &kp LALT &kp LGUI  &kp RCTRL           &none &kp H  &kp J  &kp K     &kp L    &kp SEMI &kp SQT
-        &kp LSHFT &kp Z     &kp X    &kp C    &kp V      &kp B                            &kp HOME &kp PG_UP                           &kp N  &kp M  &kp COMMA &kp DOT  &kp FSLH &kp RSHFT
-        &mo 2     &kp GRAVE &kp CAPS &kp LEFT &kp RIGHT                &kp BSPC &kp DEL   &kp END  &kp PG_DN &kp ENTER &kp SPACE              &kp UP &kp DOWN  &kp LBKT &kp RBKT &mo 2
+        &kp ESC   AS(N1)    AS(N2)   AS(N3)   AS(N4)    AS(N5) &mo 2                                                                                  &mo 3    AS(N6) AS(N7) AS(N8)    AS(N9)   AS(N0)   AS(EQUAL)
+        &kp TAB   AS(Q)     AS(W)    AS(E)    AS(R)     AS(T)  &none                                                                                  &kp UP   AS(Y)  AS(U)  AS(I)     AS(O)    AS(P)    AS(MINUS)
+        &kp CAPS  AS(A)     AS(S)    AS(D)    AS(F)     AS(G)  &kp LA(LEFT)            &kp LSHIFT &kp LALT &none &none &kp RALT &kp RSHIFT            &kp DOWN AS(H)  AS(J)  AS(K)     AS(L)    AS(SEMI) AS(BSLH)
+        &sk LSHFT AS(Z)     AS(X)    AS(C)    AS(V)     AS(B)                &none     &none      &kp DEL  &none &none &kp HOME &none      &none               AS(N)  AS(M)  AS(COMMA) AS(DOT)  AS(FSLH) AS(SQT)
+        &mo 1     AS(GRAVE) &kp LGUI &kp LEFT &kp RIGHT                      &kp ENTER &kp LCTRL  &kp BSPC             &kp END  &kp RCTRL  &kp SPACE                  &kp UP &kp DOWN  &kp BSPC &kp DEL  &mo 1
       >;
     };
     keypad {
       bindings = <
-        &kp EQUAL &kp N1    &kp N2   &kp N3   &kp N4     &kp N5 &trans                                                           &mo 3 &kp N6 &kp KP_NUM &kp KP_EQUAL &kp KP_DIVIDE &kp KP_MULTIPLY &kp MINUS
-        &kp TAB   &kp Q     &kp W    &kp E    &kp R      &kp T  &none                                                            &none &kp Y  &kp KP_N7  &kp KP_N8    &kp KP_N9     &kp KP_MINUS    &kp BSLH
-        &kp ESC   &kp A     &kp S    &kp D    &kp F      &kp G  &none           &kp LCTRL &kp LALT &kp LGUI  &kp RCTRL           &none &kp H  &kp KP_N4  &kp KP_N5    &kp KP_N6     &kp KP_PLUS     &kp SQT
-        &kp LSHFT &kp Z     &kp X    &kp C    &kp V      &kp B                            &kp HOME &kp PG_UP                           &kp N  &kp KP_N1  &kp KP_N2    &kp KP_N3     &kp KP_ENTER    &kp RSHFT
-        &mo 2     &kp GRAVE &kp CAPS &kp LEFT &kp RIGHT                &kp BSPC &kp DEL   &kp END  &kp PG_DN &kp ENTER &kp KP_N0              &kp UP     &kp DOWN     &kp KP_DOT    &kp RBKT        &mo 2
+        &bt BT_CLR  &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2     &trans            &trans      &none                                                                  &trans &trans        &trans   &trans   &td_lb    &td_rb    &macro_eq
+        &trans      &trans       &trans       &trans           &kp RS(RC(R))     &trans      &none                                                                  &none  &trans        &kp HOME &kp UP   &kp END   &kp PSCRN &trans
+        &trans      &trans       &trans       &trans           &trans            &macro_au   &none         &trans &trans &none &none &trans &trans                  &none  &trans        &kp LEFT &kp DOWN &kp RIGHT &trans    &trans
+        &trans      &trans       &kp LA(F4)   &macro_cl        &trans            &bl BL_TOG         &none  &none  &trans &none &none &kp LS(LC(HOME)) &none  &none         &kp RS(RC(N)) &trans   &trans   &trans    &trans    &trans
+        &trans      &trans       &trans       &kp RS(RC(LEFT)) &kp RS(RC(RIGHT))                    &trans &trans &trans             &kp LS(LC(END))  &trans &trans                      &trans   &trans   &trans    &trans    &trans
       >;
     };
     fn {
       bindings = <
-        &kp F1 &kp F2 &kp F3 &kp F4 &kp F5 &kp F6 &tog 1                                           &mo 3 &kp F7 &kp F8 &kp F9 &kp F10 &kp F11 &kp F12
-        &trans &trans &trans &trans &trans &trans  &none                                           &none &trans &trans &trans &trans  &trans  &trans
-        &trans &trans &trans &trans &trans &trans  &none        &trans &trans &trans &trans        &none &trans &trans &trans &trans  &trans  &trans
-        &trans &trans &trans &trans &trans &trans                      &trans &trans                     &trans &trans &trans &trans  &trans  &trans
-        &trans &trans &trans &trans &trans               &trans &trans &trans &trans &trans &trans              &trans &trans &trans  &trans  &trans
+        &kp F1 &kp F2 &kp F3 &kp F4 &kp F5 &kp F6 &trans                                                       &trans &kp F7 &kp F8 &kp F9 &kp F10 &kp F11 &kp F12
+        &trans &trans &trans &trans &trans &trans &none                                                        &none  &trans &trans &trans &trans  &trans  &trans
+        &trans &trans &trans &trans &trans &trans &none         &trans &trans &none &none &trans &trans        &none  &trans &trans &trans &trans  &trans  &trans
+        &trans &trans &trans &trans &trans &trans        &none  &none  &trans &none &none &trans &none  &none         &trans &trans &trans &trans  &trans  &trans
+        &trans &trans &trans &trans &trans               &trans &trans &trans             &trans &trans &trans               &trans &trans &trans  &trans  &trans
       >;
     };
     mod {
       bindings = <
-        &none &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &none                                                                     &trans                 &none        &none        &none        &none &none &none
-        &none &none        &none        &none        &none        &none        &bootloader                                                               &bootloader            &none        &none        &none        &none &none &none
-        &none &none        &none        &none        &none        &none        &none                   &none &none &bt BT_CLR &none                      &rgb_ug RGB_MEFS_CMD 5 &none        &none        &none        &none &none &none
-        &none &none        &none        &none        &none        &none                                      &none &none                                                        &none        &none        &none        &none &none &none
-        &none &none        &none        &none        &none                                       &none &none &none &none      &bl BL_TOG &rgb_ug RGB_TOG                                     &bl BL_INC   &bl BL_DEC   &none &none &none
+        &none &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &none                                                                                                          &trans                 &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &none
+        &none &none        &none        &none        &none        &none        &bootloader                                                                                                    &bootloader            &none        &none        &none        &none        &none        &none
+        &none &none        &none        &none        &none        &none        &rgb_ug RGB_MEFS_CMD 5                 &bt BT_CLR &bt BT_CLR &none &none &bt BT_CLR &bt BT_CLR                 &rgb_ug RGB_MEFS_CMD 5 &none        &none        &none        &none        &none        &none
+        &none &none        &none        &none        &none        &none                               &none           &none      &none      &none &none &none      &none      &none                                  &none        &none        &none        &none        &none        &none
+        &none &none        &none        &bl BL_INC   &bl BL_DEC                                       &rgb_ug RGB_TOG &bl BL_TOG &none                  &none      &bl BL_TOG &rgb_ug RGB_TOG                                     &bl BL_INC   &bl BL_DEC   &none        &none        &none
       >;
     };
   };
