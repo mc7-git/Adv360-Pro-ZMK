@@ -36,7 +36,7 @@ wait-ms = <40>;
 tap-ms = <40>;
 bindings = <&macro_tap &kp C &kp O &kp N &kp S &kp O &kp L &kp E &kp DOT &kp L &kp O &kp G &kp LPAR>;
 };
-shifted: macro_shifted_kp{
+shifted: macro_shifted_kp {
 #binding-cells = <1>;
 label = "MACRO_SHIFTED_KP";
 compatible = "zmk,behavior-macro-one-param";
@@ -45,7 +45,7 @@ bindings =
 <&macro_param_1to1 &macro_tap &kp MACRO_PLACEHOLDER>,
 <&macro_release &kp LSHFT>;
 };
-as: autoshift{
+as: autoshift {
 compatible = "zmk,behavior-macro-one-param";
 #binding-cells = <1>;
 label = "AUTOSHIFT_KP";
