@@ -1,36 +1,38 @@
-  macro_quotes: macro_quotes {
-    compatible = "zmk,behavior-macro";
-    label = "macro_quotes";
-    #binding-cells = <0>;
-    bindings = <&kp SQT>, <&kp SQT>, <&kp LEFT>;
-  };
-  macro_dquotes: macro_dquotes {
-    compatible = "zmk,behavior-macro";
-    label = "macro_dquotes";
-    #binding-cells = <0>;
-    bindings = <&kp DQT>, <&kp DQT>, <&kp LEFT>;
-  };
-  macro_braces: macro_braces {
-    compatible = "zmk,behavior-macro";
-    label = "macro_braces";
-    #binding-cells = <0>;
-    bindings = <&kp LBRC>, <&kp RBRC>, <&kp LEFT>;
-  };
-  macro_parens: macro_parens {
-    compatible = "zmk,behavior-macro";
-    label = "macro_parens";
-    #binding-cells = <0>;
-    bindings = <&kp LPAR>, <&kp RPAR>, <&kp LEFT>;
-  };
-  macro_brackets: macro_brackets {
-    compatible = "zmk,behavior-macro";
-    label = "macro_brackets";
-    #binding-cells = <0>;
-    bindings = <&kp LBKT>, <&kp RBKT>, <&kp LEFT>;
-  };
-  macro_kinesis: macro_kinesis {
-    compatible = "zmk,behavior-macro";
-    label = "macro_kinesis";
-    #binding-cells = <0>;
-    bindings = <&kp LS(K)>, <&kp I>, <&kp N>, <&kp E>, <&kp S>, <&kp I>, <&kp S>;
-  };
+td_lb: tap_dance_left_bracket{
+compatible = "zmk,behavior-tap-dance";
+label = "TAP_DANCE_LEFT_BRACKET";
+#binding-cells = <0>;
+tapping-term-ms = <400>;
+bindings = <&kp LPAR>, <&kp LBRC>, <&kp LBKT>;
+};
+td_rb: tap_dance_right_bracket{
+compatible = "zmk,behavior-tap-dance";
+label = "TAP_DANCE_RIGHT_BRACKET";
+#binding-cells = <0>;
+tapping-term-ms = <400>;
+bindings = <&kp RPAR>, <&kp RBRC>, <&kp RBKT>;
+};
+macro_eq: macro_strict_equality{
+compatible = "zmk,behavior-macro";
+label = "macro_strict_equality";
+#binding-cells = <0>;
+wait-ms = <40>;
+tap-ms = <40>;
+bindings = <&macro_tap &kp EQUAL &kp EQUAL &kp EQUAL>;
+};
+macro_au: macro_site_au{
+compatible = "zmk,behavior-macro";
+label = "macro_site_au";
+#binding-cells = <0>;
+wait-ms = <40>;
+tap-ms = <40>;
+bindings = <&macro_tap &kp SPACE &kp S &kp I &kp T &kp E &kp COLON &kp STAR &kp DOT &kp C &kp O &kp M &kp DOT &kp A &kp U>;
+};
+macro_cl: macro_console_log{
+compatible = "zmk,behavior-macro";
+label = "macro_console_log";
+#binding-cells = <0>;
+wait-ms = <40>;
+tap-ms = <40>;
+bindings = <&macro_tap &kp C &kp O &kp N &kp S &kp O &kp L &kp E &kp DOT &kp L &kp O &kp G &kp LPAR>;
+};
