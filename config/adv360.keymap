@@ -45,18 +45,18 @@
       bindings = <
         &bt BT_CLR  &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2     &trans            &trans      &none                                                                  &trans &trans        &trans   &trans   &td_lb    &td_rb    &macro_eq
         &trans      &trans       &trans       &trans           &kp RS(RC(R))     &trans      &none                                                                  &none  &trans        &kp HOME &kp UP   &kp END   &kp PSCRN &trans
-        &trans      &trans       &trans       &trans           &trans            &macro_au   &none         &trans &trans &none &none &trans &trans                  &none  &trans        &to 2    &kp DOWN &kp RIGHT &trans    &trans
+        &trans      &trans       &trans       &trans           &trans            &macro_au   &none         &trans &trans &none &none &trans &trans                  &none  &trans        &kp LEFT &kp DOWN &kp RIGHT &trans    &trans
         &trans      &trans       &kp LA(F4)   &macro_cl        &trans            &bl BL_TOG         &none  &none  &trans &none &none &kp LS(LC(HOME)) &none  &none         &kp RS(RC(N)) &trans   &trans   &trans    &trans    &trans
         &trans      &trans       &trans       &kp RS(RC(LEFT)) &kp RS(RC(RIGHT))                    &trans &trans &trans             &kp LS(LC(END))  &trans &trans                      &trans   &trans   &trans    &trans    &trans
       >;
     };
     fn {
       bindings = <
-        &kp F1 &kp F2 &kp F3 &kp F4 &kp F5 &kp F6 &trans                                                       &trans &kp F7   &kp F8 &kp F9 &kp F10 &kp F11 &kp F12
-        &trans &trans &trans &trans &trans &trans &none                                                        &none  &trans   &trans &trans &trans  &trans  &trans
-        &trans &trans &trans &trans &trans &trans &none         &trans &trans &none &none &trans &trans        &none  &kp LEFT &trans &trans &trans  &trans  &trans
-        &trans &trans &trans &trans &trans &trans        &none  &none  &trans &none &none &trans &none  &none         &trans   &trans &trans &trans  &trans  &trans
-        &trans &trans &trans &trans &trans               &trans &trans &trans             &trans &trans &trans                 &trans &trans &trans  &trans  &trans
+        &kp F1 &kp F2 &kp F3 &kp F4 &kp F5 &kp F6 &trans                                                       &trans &kp F7 &kp F8 &kp F9 &kp F10 &kp F11 &kp F12
+        &trans &trans &trans &trans &trans &trans &none                                                        &none  &trans &trans &trans &trans  &trans  &trans
+        &trans &trans &trans &trans &trans &trans &none         &trans &trans &none &none &trans &trans        &none  &trans &trans &trans &trans  &trans  &trans
+        &trans &trans &trans &trans &trans &trans        &none  &none  &trans &none &none &trans &none  &none         &trans &trans &trans &trans  &trans  &trans
+        &trans &trans &trans &trans &trans               &trans &trans &trans             &trans &trans &trans               &trans &trans &trans  &trans  &trans
       >;
     };
     mod {
