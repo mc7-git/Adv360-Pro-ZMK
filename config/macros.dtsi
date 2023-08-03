@@ -3,14 +3,14 @@ td_lb: tap_dance_left_bracket{
   label = "TAP_DANCE_LEFT_BRACKET";
   #binding-cells = <0>;
   tapping-term-ms = <400>;
-  bindings = <&kp LPAR>, <&kp LBRC>, <&kp LBKT>;
+  bindings = <&kp LBRC>, <&kp LBKT>;
 };
 td_rb: tap_dance_right_bracket{
   compatible = "zmk,behavior-tap-dance";
   label = "TAP_DANCE_RIGHT_BRACKET";
   #binding-cells = <0>;
   tapping-term-ms = <400>;
-  bindings = <&kp RPAR>, <&kp RBRC>, <&kp RBKT>;
+  bindings = <&kp RBRC>, <&kp RBKT>;
 };
 macro_eq: macro_strict_equality{
   compatible = "zmk,behavior-macro";
