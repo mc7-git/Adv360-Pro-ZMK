@@ -1,62 +1,62 @@
 td_lb: tap_dance_left_bracket{
-compatible = "zmk,behavior-tap-dance";
-label = "TAP_DANCE_LEFT_BRACKET";
-#binding-cells = <0>;
-tapping-term-ms = <400>;
-bindings = <&kp LPAR>, <&kp LBRC>, <&kp LBKT>;
+  compatible = "zmk,behavior-tap-dance";
+  label = "TAP_DANCE_LEFT_BRACKET";
+  #binding-cells = <0>;
+  tapping-term-ms = <400>;
+  bindings = <&kp LPAR>, <&kp LBRC>, <&kp LBKT>;
 };
 td_rb: tap_dance_right_bracket{
-compatible = "zmk,behavior-tap-dance";
-label = "TAP_DANCE_RIGHT_BRACKET";
-#binding-cells = <0>;
-tapping-term-ms = <400>;
-bindings = <&kp RPAR>, <&kp RBRC>, <&kp RBKT>;
+  compatible = "zmk,behavior-tap-dance";
+  label = "TAP_DANCE_RIGHT_BRACKET";
+  #binding-cells = <0>;
+  tapping-term-ms = <400>;
+  bindings = <&kp RPAR>, <&kp RBRC>, <&kp RBKT>;
 };
 macro_eq: macro_strict_equality{
-compatible = "zmk,behavior-macro";
-label = "macro_strict_equality";
-#binding-cells = <0>;
-wait-ms = <40>;
-tap-ms = <40>;
-bindings = <&macro_tap &kp EQUAL &kp EQUAL &kp EQUAL>;
+  compatible = "zmk,behavior-macro";
+  label = "macro_strict_equality";
+  #binding-cells = <0>;
+  wait-ms = <40>;
+  tap-ms = <40>;
+  bindings = <&macro_tap &kp EQUAL &kp EQUAL &kp EQUAL>;
 };
 macro_au: macro_site_au{
-compatible = "zmk,behavior-macro";
-label = "macro_site_au";
-#binding-cells = <0>;
-wait-ms = <40>;
-tap-ms = <40>;
-bindings = <&macro_tap &kp SPACE &kp S &kp I &kp T &kp E &kp COLON &kp STAR &kp DOT &kp C &kp O &kp M &kp DOT &kp A &kp U>;
+  compatible = "zmk,behavior-macro";
+  label = "macro_site_au";
+  #binding-cells = <0>;
+  wait-ms = <40>;
+  tap-ms = <40>;
+  bindings = <&macro_tap &kp SPACE &kp S &kp I &kp T &kp E &kp COLON &kp STAR &kp DOT &kp C &kp O &kp M &kp DOT &kp A &kp U>;
 };
 macro_cl: macro_console_log{
-compatible = "zmk,behavior-macro";
-label = "macro_console_log";
-#binding-cells = <0>;
-wait-ms = <40>;
-tap-ms = <40>;
-bindings = <&macro_tap &kp C &kp O &kp N &kp S &kp O &kp L &kp E &kp DOT &kp L &kp O &kp G &kp LPAR>;
+  compatible = "zmk,behavior-macro";
+  label = "macro_console_log";
+  #binding-cells = <0>;
+  wait-ms = <40>;
+  tap-ms = <40>;
+  bindings = <&macro_tap &kp C &kp O &kp N &kp S &kp O &kp L &kp E &kp DOT &kp L &kp O &kp G &kp LPAR>;
 };
 shifted: macro_shifted_kp {
-#binding-cells = <1>;
-label = "MACRO_SHIFTED_KP";
-compatible = "zmk,behavior-macro-one-param";
-bindings =
-<&macro_press &kp LSHFT>,
-<&macro_param_1to1 &macro_tap &kp MACRO_PLACEHOLDER>,
-<&macro_release &kp LSHFT>;
+  #binding-cells = <1>;
+  label = "MACRO_SHIFTED_KP";
+  compatible = "zmk,behavior-macro-one-param";
+  bindings =
+    <&macro_press &kp LSHFT>,
+    <&macro_param_1to1 &macro_tap &kp MACRO_PLACEHOLDER>,
+    <&macro_release &kp LSHFT>;
 };
 as: autoshift {
-compatible = "zmk,behavior-macro-one-param";
-#binding-cells = <1>;
-label = "AUTOSHIFT_KP";
-bindings =
-<&macro_press>,
-<&macro_param_1to1>,
-<&macro_param_1to2>,
-<&as_ht MACRO_PLACEHOLDER MACRO_PLACEHOLDER>,
-<&macro_pause_for_release>,
-<&macro_release>,
-<&macro_param_1to1>,
-<&macro_param_1to2>,
-<&as_ht MACRO_PLACEHOLDER MACRO_PLACEHOLDER>;
+  compatible = "zmk,behavior-macro-one-param";
+  #binding-cells = <1>;
+  label = "AUTOSHIFT_KP";
+  bindings =
+    <&macro_press>,
+    <&macro_param_1to1>,
+    <&macro_param_1to2>,
+    <&as_ht MACRO_PLACEHOLDER MACRO_PLACEHOLDER>,
+    <&macro_pause_for_release>,
+    <&macro_release>,
+    <&macro_param_1to1>,
+    <&macro_param_1to2>,
+    <&as_ht MACRO_PLACEHOLDER MACRO_PLACEHOLDER>;
 };
