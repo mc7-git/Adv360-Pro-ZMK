@@ -27,20 +27,7 @@
         flavor = "tap-preferred";
         bindings = <&kp>, <&kp>;
       };
-      skq: sticky_key_quick_release {
-        compatible = "zmk,behavior-sticky-key";
-        label = "STICKY_KEY_QUICK_RELEASE";
-        #binding-cells = <1>;
-        bindings = <&kp>;
-        release-after-ms = <1000>;
-        quick-release;
-        ignore-modifiers;
-      };
     };
-
-
-
-
 
   keymap {
     compatible = "zmk,keymap";
@@ -50,7 +37,7 @@
         &kp  ESC    AS(N1)    AS(N2)   AS(N3)   AS(N4)    AS(N5) &mo 2                                                                                  &mo 3    AS(N6) AS(N7) AS(N8)    AS(N9)   AS(N0)   AS(EQUAL)
         &kp  TAB    AS(Q)     AS(W)    AS(E)    AS(R)     AS(T)  &none                                                                                  &kp UP   AS(Y)  AS(U)  AS(I)     AS(O)    AS(P)    AS(MINUS)
         &kp  CAPS   AS(A)     AS(S)    AS(D)    AS(F)     AS(G)  &kp LA(LEFT)            &kp LSHIFT &kp LALT &none &none &kp RALT &kp RSHIFT            &kp DOWN AS(H)  AS(J)  AS(K)     AS(L)    AS(SEMI) AS(BSLH)
-        &skq LSHIFT AS(Z)     AS(X)    AS(C)    AS(V)     AS(B)                &none     &none      &kp DEL  &none &none &kp HOME &none      &none               AS(N)  AS(M)  AS(COMMA) AS(DOT)  AS(FSLH) AS(SQT)
+        &sk  LSHIFT AS(Z)     AS(X)    AS(C)    AS(V)     AS(B)                &none     &none      &kp DEL  &none &none &kp HOME &none      &none               AS(N)  AS(M)  AS(COMMA) AS(DOT)  AS(FSLH) AS(SQT)
         &mo  1      AS(GRAVE) &kp LGUI &kp LEFT &kp RIGHT                      &kp ENTER &kp LCTRL  &kp BSPC             &kp END  &kp RCTRL  &kp SPACE                  &kp UP &kp DOWN  &kp BSPC &kp DEL  &mo 1
       >;
     };
