@@ -35,7 +35,7 @@
       bindings = <
         &trans &trans &trans     &trans &trans        &trans    &trans                                               &trans &trans        &trans   &trans   &td_lb    &td_rb    &trans
         &trans &trans &trans     &trans &kp RS(RC(R)) &trans    &none                                                &none  &trans        &kp HOME &kp UP   &kp END   &kp PSCRN &trans
-        &trans &trans &trans     &trans &trans        &macro_au &none             &trans &trans &trans &trans        &none  &BSPC         &kp LEFT &kp DOWN &kp RIGHT &kp DEL   &trans
+        &trans &trans &trans     &trans &trans        &macro_au &none             &trans &trans &trans &trans        &none  &kp BSPC      &kp LEFT &kp DOWN &kp RIGHT &kp DEL   &trans
         &trans &trans &kp LA(F4) &macro_cl            &trans    &bl BL_TOG               &trans &trans                      &kp RS(RC(N)) &trans   &trans   &trans    &trans    &trans
         &to 0  &trans &trans     &trans &trans                             &trans &trans &trans &trans &trans &trans                      &trans   &trans   &trans    &trans    &to 0
       >;
