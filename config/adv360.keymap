@@ -28,7 +28,7 @@
         &kp TAB   &kp Q     &kp W    &kp E    &kp R      &kp T  &none                                                            &none &kp Y  &kp U  &kp I     &kp O    &kp P    &kp MINUS
         &kp CAPS  &kp A     &kp S    &kp D    &kp F      &kp G  &none           &kp LSHFT &kp LALT &kp RALT  &kp RSHFT           &none &kp H  &kp J  &kp K     &kp L    &kp SEMI &kp BSLH
         &kp LSHFT &kp Z     &kp X    &kp C    &kp V      &kp B                            &kp DEL  &kp HOME                            &kp N  &kp M  &kp COMMA &kp DOT  &kp FSLH &kp SQT
-        &mo 1     &kp GRAVE &kp LGUI &kp LEFT &kp RIGHT               &kp ENTER &kp LCTRL &kp BSPC &kp END   &kp RCTRL &kp SPACE              &kp UP &kp DOWN  &kp BSPC &kp DEL  &mo 1
+        &to_key   &kp GRAVE &kp LGUI &kp LEFT &kp RIGHT               &kp ENTER &kp LCTRL &kp BSPC &kp END   &kp RCTRL &kp SPACE              &kp UP &kp DOWN  &kp BSPC &kp DEL  &to_key
       >;
     };
     keypad {
@@ -37,7 +37,7 @@
         &trans &trans &trans     &trans &kp RS(RC(R)) &trans    &none                                                &none  &trans        &kp HOME &kp UP   &kp END   &kp PSCRN &trans
         &trans &trans &trans     &trans &trans        &macro_au &none             &trans &trans &trans &trans        &none  &trans        &kp LEFT &kp DOWN &kp RIGHT &trans    &trans
         &trans &trans &kp LA(F4) &macro_cl            &trans    &bl BL_TOG               &trans &trans                      &kp RS(RC(N)) &trans   &trans   &trans    &trans    &trans
-        &trans &trans &trans     &trans &trans                             &trans &trans &trans &trans &trans &trans                      &trans   &trans   &trans    &trans    &trans
+        &to 0  &trans &trans     &trans &trans                             &trans &trans &trans &trans &trans &trans                      &trans   &trans   &trans    &trans    &to 0
       >;
     };
     fn {
