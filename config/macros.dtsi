@@ -13,6 +13,14 @@ tapping-term-ms = <400>;
 bindings = <&kp RBRC>, <&kp RBKT>;
 };
 
+to_key: to_keypad {
+compatible = "zmk,behavior-mod-morph";
+label = "TO_KEYPAD";
+#binding-cells = <0>;
+bindings = <&mo 1>, <&to 1>;
+mods = <(MOD_LSFT|MOD_RSFT)>;
+};
+
 macro_eq: macro_strict_equality{
 compatible = "zmk,behavior-macro";
 label = "macro_strict_equality";
