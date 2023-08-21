@@ -24,29 +24,32 @@ sel_lt: select_lt {
 compatible = "zmk,behavior-mod-morph";
 label = "SELECT_LT";
 #binding-cells = <0>;
-bindings = <&kp LEFT>, <&kp LCTRL(LSHIFT(LEFT))>;
+bindings = <&kp LEFT>, <&kp LCTRL(LEFT)>;
 mods = <(MOD_LSFT)>;
+keep-mods = <(MOD_LSFT)>;
 };
 sel_rt: select_rt {
 compatible = "zmk,behavior-mod-morph";
 label = "SELECT_RT";
 #binding-cells = <0>;
-bindings = <&kp RIGHT>, <&kp LCTRL(LSHIFT(RIGHT))>;
-mods = <(MOD_LSFT)>;
+bindings = <&kp RIGHT>, <&kp LCTRL(RIGHT)>;
+keep-mods = <(MOD_LSFT)>;
 };
 sel_up: select_up {
 compatible = "zmk,behavior-mod-morph";
 label = "SELECT_UP";
 #binding-cells = <0>;
-bindings = <&kp UP>, <&kp LCTRL(LSHIFT(UP))>;
+bindings = <&kp UP>, <&kp LCTRL(UP)>;
 mods = <(MOD_LSFT)>;
+keep-mods = <(MOD_LSFT)>;
 };
 sel_dn: select_dn {
 compatible = "zmk,behavior-mod-morph";
 label = "SELECT_DN";
 #binding-cells = <0>;
-bindings = <&kp DOWN>, <&kp LCTRL(LSHIFT(DOWN))>;
+bindings = <&kp DOWN>, <&kp LCTRL(DOWN)>;
 mods = <(MOD_LSFT)>;
+keep-mods = <(MOD_LSFT)>;
 };
 
 macro_eq: macro_strict_equality{
