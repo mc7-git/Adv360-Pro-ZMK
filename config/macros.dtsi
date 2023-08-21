@@ -20,38 +20,6 @@ label = "TO_KEYPAD";
 bindings = <&mo 1>, <&to 1>;
 mods = <(MOD_LSFT|MOD_RSFT)>;
 };
-sel_lt: select_lt {
-compatible = "zmk,behavior-mod-morph";
-label = "SELECT_LT";
-#binding-cells = <0>;
-bindings = <&kp LEFT>, <&kp LCTRL(LEFT)>;
-mods = <(MOD_LSFT)>;
-keep-mods = <(MOD_LSFT)>;
-};
-sel_rt: select_rt {
-compatible = "zmk,behavior-mod-morph";
-label = "SELECT_RT";
-#binding-cells = <0>;
-bindings = <&kp RIGHT>, <&kp LCTRL(RIGHT)>;
-mods = <(MOD_LSFT)>;
-keep-mods = <(MOD_LSFT)>;
-};
-sel_up: select_up {
-compatible = "zmk,behavior-mod-morph";
-label = "SELECT_UP";
-#binding-cells = <0>;
-bindings = <&kp UP>, <&kp LCTRL(UP)>;
-mods = <(MOD_LSFT)>;
-keep-mods = <(MOD_LSFT)>;
-};
-sel_dn: select_dn {
-compatible = "zmk,behavior-mod-morph";
-label = "SELECT_DN";
-#binding-cells = <0>;
-bindings = <&kp DOWN>, <&kp LCTRL(DOWN)>;
-mods = <(MOD_LSFT)>;
-keep-mods = <(MOD_LSFT)>;
-};
 
 macro_eq: macro_strict_equality{
 compatible = "zmk,behavior-macro";
