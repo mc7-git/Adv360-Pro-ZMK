@@ -33,6 +33,7 @@ compatible = "zmk,behavior-mod-morph";
 label = "SELECT_RT";
 #binding-cells = <0>;
 bindings = <&kp RIGHT>, <&kp LCTRL(RIGHT)>;
+mods = <(MOD_LSFT)>;
 keep-mods = <(MOD_LSFT)>;
 };
 sel_up: select_up {
