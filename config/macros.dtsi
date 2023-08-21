@@ -12,13 +12,12 @@ label = "TAP_DANCE_RIGHT_BRACKET";
 tapping-term-ms = <400>;
 bindings = <&kp RBRC>, <&kp RBKT>;
 };
-
-to_key: to_keypad {
-compatible = "zmk,behavior-mod-morph";
-label = "TO_KEYPAD";
+td_key: tap_dance_keypad{
+compatible = "zmk,behavior-tap-dance";
+label = "TAP_DANCE_KEYPAD";
 #binding-cells = <0>;
+tapping-term-ms = <400>;
 bindings = <&mo 1>, <&to 1>;
-mods = <(MOD_LSFT|MOD_RSFT)>;
 };
 
 macro_eq: macro_strict_equality{
